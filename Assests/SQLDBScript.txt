@@ -1,0 +1,63 @@
+Drop Table dbo.tbl.dbconn;
+Drop Table dbo.tbl_patients;
+Drop Table dbo.tbl_clients;
+
+================== Initiate Patient Table ==================
+
+Create table tbl_dbconn
+(
+usr_id varchar(30),
+usr_firstname varchar(100),
+usr_password int,
+usr_role int);
+
+
+Create table tbl_patients
+(
+pat_no int identity(00,1),
+pat_id dec primary key,
+pat_title varchar(10),
+pat_firstname varchar(100),
+pat_middlename varchar(100),
+pat_lastname varchar(100),
+pat_gender varchar(10),
+pat_dob date,
+pat_age int,
+pat_tel dec,
+pat_mobile dec,
+pat_email varchar(150),
+pat_address varchar(255),
+pat_city varchar(255),
+pat_province varchar(100),
+pat_zip int,
+pat_notes varchar(255),
+pat_attachment varchar(255),
+pat_date datetime NOT NULL DEFAULT GETDATE(),
+);
+
+
+========= Initiate Clients Table =============
+
+Create table tbl_clients
+(
+cl_ID int identity(102180,1) Primary Key,
+cl_company varchar(150),
+cl_trading varchar(150),
+cl_reg int,
+cl_vat int,
+cl_type varchar(150),
+cl_industry varchar(150),
+cl_firstname varchar(150),
+cl_lastname varchar(150),
+cl_email varchar(255),
+cl_address varchar(255),
+cl_city varchar(255),
+cl_province varchar(100),
+cl_zip int,
+cl_tel int,
+cl_mobile int,
+cl_url varchar(255),
+cl_notes varchar(255),
+cl_attachement varchar(255),
+cl_date datetime NOT NULL DEFAULT GETDATE(),
+);
